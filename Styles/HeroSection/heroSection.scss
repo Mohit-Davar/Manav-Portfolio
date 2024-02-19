@@ -1,0 +1,185 @@
+// @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Protest+Strike&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+@mixin flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin buttonReset {
+    background: none;
+    outline: none;
+    appearance: none;
+    border: none;
+}
+
+$padding-inline: 7vw;
+$gap-navbar: 1vw;
+$higlight-font-size: clamp(1.5rem, 2vw, 10rem);
+$higlight-font-weight: 400;
+$focus-font-size: clamp(1rem, 1vw, 10rem);
+$theme-color: royalblue;
+$theme-background: hwb(0 98% 1%);
+
+.heroSection {
+    background-color: $theme-background;
+    padding-inline: $padding-inline ;
+    height: calc(100vh - 100px);
+    display: flex;
+
+    .text {
+        width: 50%;
+        height: 100%;
+        @include flex;
+
+        gap: 7vw;
+
+        .socialMedia {
+            @include flex;
+            flex-direction: column;
+            gap: 35px;
+
+            a {
+                i{
+                    user-select: none;
+                    color: $theme-color;
+                    font-size: $higlight-font-size;
+                }
+            }
+        }
+
+        .content {
+            @include flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 30px;
+            h1{
+                font-family: "Caveat", cursive;
+                font-optical-sizing: auto;
+                font-weight: $higlight-font-weight;
+                font-style: normal;
+                font-size: clamp(2.5rem,4vw,10rem);
+            }
+
+            .text-animation {
+                margin-top: -20px;
+                display: block;
+                @include flex;
+                gap: .5vw;
+                height: 30px;
+
+                .cursor {
+                    background: $theme-color;
+                    height: 100%;
+                    user-select: none;
+                }
+
+                .dynamic {
+                    color: $theme-color;
+                    font-family: "Urbanist", sans-serif;
+                    font-optical-sizing: auto;
+                    font-weight: 600;
+                    font-style: normal;
+                    font-size: $higlight-font-size;
+                    user-select: none;
+                    
+                }
+            }
+            p{
+                font-size: $focus-font-size;
+                font-family: "Urbanist", sans-serif;
+                font-optical-sizing: auto;
+                font-weight: 600;
+                font-style: normal;
+                
+            }
+            button{
+                @include buttonReset;
+                background: $theme-color;
+                padding: 20px 20px;
+                border-radius: 50px;
+                color: white;
+                user-select: none;
+                i{
+                    margin-left: clamp(5px,.5vw,10rem);
+                }
+            }
+        }
+    }
+    .photo
+    {
+        width: 50%;
+        height: 100%;
+        @include flex;
+        .frame{
+            border-radius: 50%;
+            padding: 5px;
+            position: relative;
+            background: $theme-background;
+            &::after{
+                position: absolute;
+                content: "";
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                background: $theme-color;
+                top: 0%;
+                left: 0%;
+                z-index: -1;
+                filter: blur(20px);
+                animation: blobOne 3s ease-out infinite alternate;
+            }
+            &::before{
+                position: absolute;
+                content: "";
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                background: $theme-color;
+                top: 0%;
+                left: 0%;
+                z-index: -1;
+                filter: blur(20px);
+                animation: blobTwo 3s ease-in infinite alternate;
+            }
+            img{
+                object-fit: cover;
+                object-position: center;
+                border-radius: 50%;
+            }
+        }
+    }
+    .scroll{
+        position: absolute;
+        bottom: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        color: $theme-color;
+        font-family: "Urbanist", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 600;
+        font-style: normal;
+        font-size: $focus-font-size;
+        user-select: none;
+    }
+}
+@keyframes blobOne{
+    from{
+        transform: translate(25%,-10%);
+    }
+    to{
+        transform: translate(15%,15%) ;
+    }
+}
+@keyframes blobTwo {
+    from{
+        transform: translate(25%,15%);
+    }
+    to{
+        transform: translate(30%,-5%) ;
+    }
+}

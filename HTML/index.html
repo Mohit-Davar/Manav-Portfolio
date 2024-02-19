@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manav Bangotra</title>
+    <link rel="stylesheet" href="/Styles/presets/presets.css">
+    <link rel="stylesheet" href="/Styles/NavigationBar/navbar.css">
+    <link rel="stylesheet" href="/Styles/HeroSection/heroSection.css">
+    <link rel="stylesheet" href="/Styles/Skills/skills.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+</head>
+
+<body>
+    <div class="main" data-scroll-container>
+        <nav>
+            <div class="logo">Manav</div>
+            <div class="sections">
+                <div class="home section"><a href="#home">Home</a></div>
+                <div class="skills section"  ><a href="#skills" data-scroll-to>Skills</a></div>
+                <div class="projects section"><a href="#">Projects</a></div>
+                <div class="about section"><a href="#">About</a></div>
+                <div class="contact section"><a href="#">Contact</a></div>
+                <div class="cv">
+                    <a href="/Images/CV.pdf" download><button>Download CV</button></a>
+                </div>
+            </div>
+        </nav>
+        <main>
+            <section class="heroSection" id="#home">
+                <article class="text">
+                    <div class="socialMedia">
+                        <a href="https://www.linkedin.com/in/manav-bangotra-8a4615257/" target="_blank"><i
+                                class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://github.com/Manavbangotra" target="_blank">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+
+                    </div>
+                    <div class="content">
+                        <h1>Hi, I'm Manav</h1>
+                        <div class="text-animation">
+                            <span class="dynamic"></span>
+                            <div class="cursor">&nbsp;</div>
+                        </div>
+
+                        <p>Crafting visually stunning user interfaces as a Frontend Developer, while also leveraging
+                            analytical skills as a Data Analyst to transform data into actionable insights.</p>
+                        <button>
+                            Contact Me <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </article>
+                <article class="photo">
+                    <div class="frame">
+                        <img src="/Images/FrontFace.jpg" alt="">
+                    </div>
+                </article>
+                <!-- <div class="scroll">
+                    Scroll Down <i class="fa-solid fa-arrow-down"></i>
+                </div> -->
+            </section>
+            <section class="myskills" id="skills" data-scroll-section>
+                <button id="skillButton"><span id="buttonText">Skills</span></button>
+                <div class="heading">
+                    <h2>Things I'm <span>good</span> at</h2>
+                    <p>skills,interests,passion and hobbies</p>
+                </div>
+                <div class="development">
+                    <div class="title">
+                        development
+                    </div>
+                    <div class="section">
+                        <div class="logo"><img src="/Images/React-icon.svg.webp" alt=""></div>
+                        <div class="logo"><img src="/Images/js-min.webp" alt=""></div>
+                        <div class="logo"><img src="/Images/Tailwind.png" alt=""></div>
+                        <div class="logo"><img src="/Images/github-min.webp" alt=""></div>
+                        <div class="logo"><img src="/Images/html-min.webp" alt=""></div>
+                        <div class="logo"><img src="/Images/LINUX-LOGO.png" alt=""></div>
+                        <div class="logo"><img src="/Images/css-min.webp" alt=""></div>
+                    </div>
+                </div>
+                <div class="dataScience">
+                    <div class="title">
+                        data science
+                    </div>
+                    <div class="section">
+                        <div class="logo"><img src="/Images/Python.png" alt=""></div>
+                        <div class="logo"><img src="/Images/R.svg" alt=""></div>
+                        <div class="logo"><img src="/Images/SQL.png" alt=""></div>
+                        <div class="logo"><img src="/Images/Excel.jpg" alt=""></div>
+                        <div class="logo"><img src="/Images/NLTKIcon.png" alt=""></div>
+                        <div class="logo"><img src="/Images/TensorFlow.png" alt=""></div>
+                        <div class="logo"><img src="/Images/Flask.png" alt=""></div>
+                        <div class="logo"><img src="/Images/Pyspark.jpg" alt=""></div>
+                        <div class="logo"><img src="/Images/tableau.png" alt=""></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+    integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    // const scroll = new LocomotiveScroll({
+    //     el: document.querySelector('.main'),
+    //     smooth: true
+    // });
+    gsap.registerPlugin(ScrollTrigger);
+    const locoScroll = new LocomotiveScroll({
+        el: document.querySelector(".main"),
+        smooth: true
+    });
+    locoScroll.on("scroll", ScrollTrigger.update);
+    ScrollTrigger.scrollerProxy(".main", {
+        scrollTop(value) {
+            return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+        }, 
+        getBoundingClientRect() {
+            return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+        },
+        pinType: document.querySelector(".main").style.transform ? "transform" : "fixed"
+    });
+    ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+    ScrollTrigger.refresh();
+</script>
+<script src="/Scripts/dynamic-typing.js"></script>
+<script src="/Scripts/skills.js"></script>
+
+</html>

@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Protest+Strike&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+@mixin flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin buttonReset{
+    background: none;
+    outline: none;
+    appearance: none;
+    border: none;
+}
+$padding-inline: 7vw;
+$gap-navbar: 1vw;
+$higlight-font-size: clamp(1.5rem,2vw,10rem);
+$higlight-font-weight: 400;
+$focus-font-size:  clamp(1rem,1vw,10rem);
+$theme-color: royalblue;
+$theme-background: hwb(0 98% 1%);
+nav{
+    background: $theme-background;
+    @include flex;
+    justify-content: space-between;
+
+    padding: 30px $padding-inline;
+
+    // position: fixed;
+    z-index: 100;
+    
+    // background: white;
+    width: 100%;
+    height: 100px;
+    .logo{
+        font-family: "Protest Strike", sans-serif;
+        font-weight: $higlight-font-weight;
+        font-style: normal;
+        font-size: $higlight-font-size;
+        color: $theme-color;
+        user-select: none;
+
+    }
+    .sections{
+        @include flex;
+        gap: $gap-navbar;
+        .section{
+            position: relative;
+            user-select: none;
+            cursor: pointer;
+            overflow: hidden;
+            // color: $theme-color;
+            padding: 10px 15px;
+            // border: 1px solid $theme-color;
+            border-radius: 30px;
+            a{
+                color: black;
+                font-family: "Urbanist", sans-serif;
+                font-optical-sizing: auto;
+                font-weight: 600;
+                font-style: normal;
+                font-size: $focus-font-size;
+                text-decoration: none;
+            }
+        }
+        .section::after{
+            position: absolute;
+            content: "";
+            top: 100%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            background: $theme-color;
+            border-radius: 50%;
+            transition-property: all;
+            transition-duration: 0.3s;
+            transition-timing-function: ease-in;
+            z-index: -1;
+
+        }
+        .section:hover::after{
+            top: 0%;
+            border-radius: 0;
+        }
+        .section:hover a{
+            color: white;
+        }
+        .cv button{
+            @include buttonReset;
+            font-family: "Urbanist", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 600;
+            font-style: normal;
+            font-size: $focus-font-size;
+            background: $theme-color;
+            border-radius: 10px;
+            padding: 10px 10px;
+            color: white;
+            
+        }
+    }
+}

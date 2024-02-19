@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Protest+Strike&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+nav {
+  background: hwb(0 98% 1%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 7vw;
+  z-index: 100;
+  width: 100%;
+  height: 100px;
+}
+
+nav .logo {
+  font-family: "Protest Strike", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(1.5rem, 2vw, 10rem);
+  color: royalblue;
+  user-select: none;
+}
+
+nav .sections {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1vw;
+}
+
+nav .sections .section {
+  position: relative;
+  user-select: none;
+  cursor: pointer;
+  overflow: hidden;
+  padding: 10px 15px;
+  border-radius: 30px;
+}
+
+nav .sections .section a {
+  color: black;
+  font-family: "Urbanist", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: clamp(1rem, 1vw, 10rem);
+  text-decoration: none;
+}
+
+nav .sections .section::after {
+  position: absolute;
+  content: "";
+  top: 100%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background: royalblue;
+  border-radius: 50%;
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in;
+  z-index: -1;
+}
+
+nav .sections .section:hover::after {
+  top: 0%;
+  border-radius: 0;
+}
+
+nav .sections .section:hover a {
+  color: white;
+}
+
+nav .sections .cv button {
+  background: none;
+  outline: none;
+  appearance: none;
+  border: none;
+  font-family: "Urbanist", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: clamp(1rem, 1vw, 10rem);
+  background: royalblue;
+  border-radius: 10px;
+  padding: 10px 10px;
+  color: white;
+}
